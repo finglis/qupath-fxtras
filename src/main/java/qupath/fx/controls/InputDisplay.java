@@ -145,7 +145,7 @@ public class InputDisplay implements EventHandler<InputEvent> {
 		window.addEventFilter(InputEvent.ANY, this);
 		window.focusedProperty().addListener(focusListener);
 		window.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
-			if (event.isControlDown() && event.getCode() == KeyCode.W) {
+			if (event.isShortcutDown() && event.getCode() == KeyCode.W) {
 				window.hide();  // This will close the window
 			}
 		});
