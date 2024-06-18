@@ -144,6 +144,11 @@ public class InputDisplay implements EventHandler<InputEvent> {
 	private void addListenersToWindow(Window window) {
 		window.addEventFilter(InputEvent.ANY, this);
 		window.focusedProperty().addListener(focusListener);
+		window.addEventHandler(KeyEvent.KEY_PRESSED, event -> {
+			if (event.isControlDown() && event.getCode() == KeyCode.W) {
+				window.hide();  // This will close the window
+			}
+		});
 	}
 
 	private void removeListenersFromWindow(Window window) {
